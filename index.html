@@ -108,9 +108,10 @@
         document.querySelector("#unity-container").className = "unity-mobile";
         canvas.className = "unity-mobile";
 
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
+        // Keep the WebGL render target at CSS-pixel resolution on phones.
+        // Retina resolution can multiply GPU memory use enough to crash
+        // Unity WebGL in iPhone browsers.
+        config.devicePixelRatio = 1;
 
 
       } else {
